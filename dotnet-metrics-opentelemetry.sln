@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9EC0A412-5812-42A2-8607-09AA69F8E988}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{8695F6D9-FC5F-4AF7-B19A-E5EA8A7B2CC9}"
+	ProjectSection(SolutionItems) = preProject
+		docker\docker_infrastructure.yml = docker\docker_infrastructure.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prometheus", "prometheus", "{C1D3182A-AA01-40FB-88E5-A3ED3CEC0566}"
+	ProjectSection(SolutionItems) = preProject
+		prometheus\prometheus.yml = prometheus\prometheus.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenTelemetryMetrics.API", "src\OpenTelemetryMetrics.API\OpenTelemetryMetrics.API.csproj", "{5962D96E-F121-4D3F-86A1-0702045EC29E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5962D96E-F121-4D3F-86A1-0702045EC29E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5962D96E-F121-4D3F-86A1-0702045EC29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5962D96E-F121-4D3F-86A1-0702045EC29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5962D96E-F121-4D3F-86A1-0702045EC29E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5962D96E-F121-4D3F-86A1-0702045EC29E} = {9EC0A412-5812-42A2-8607-09AA69F8E988}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D2807F2-9A42-4BBB-9595-A52BBAE0D864}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,52 @@
+version: '3.4'
+
+services:
+
+    api-opentelemetry:
+        image: api-opentelemetry:latest
+        container_name: api-opentelemetry
+        build:
+            context: ../
+            dockerfile: ./src/OpenTelemetryMetrics.API/Dockerfile                       
+        ports:
+            - 5000:8080
+            - 5001:8081
+        networks:
+            - observability-network
+
+    prometheus:
+        image: prom/prometheus
+        container_name: prometheus
+        ports:
+            - "9090:9090"
+        volumes:
+            - ../prometheus:/etc/prometheus
+            - prometheus_data:/prometheus
+        command:
+            - '--config.file=/etc/prometheus/prometheus.yml'
+            - '--web.enable-lifecycle'
+        networks:
+            - observability-network
+                        
+    grafana:
+        image: grafana/grafana:latest
+        container_name: grafana
+        ports:
+            - 3000:3000
+        volumes:
+            - grafana-data:/var/lib/grafana            
+        environment:
+            - GF_AUTH_ANONYMOUS_ENABLED=true
+            - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
+        networks:
+            - observability-network
+
+networks:
+    observability-network:
+        driver: bridge
+        
+volumes:
+    grafana-data:
+        driver: local        
+    prometheus_data:
+        driver: local        
