@@ -1,5 +1,5 @@
 # dotnet-metrics-opentelemetry
-Demonstração da coleta de métricas utilizando OpenTelemetry e porterior visualização destes dados utilizando Prometheus e Grafana.
+Demonstração da coleta de métricas utilizando OpenTelemetry e posterior visualização desses dados utilizando Prometheus e Grafana.
 
 # Como executar:
 - Clonar / baixar o repositório em seu workplace.
